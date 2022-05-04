@@ -1,13 +1,13 @@
 export class Cards {
 
-
   checkPageTitle(text) {
     cy.get('.container').get('h1').should('have.text', text)
   }
 
   checkToggleCards() {
     cy.contains("Toggle Cards").click()
-    cy.get('p').contains('Cards are hidden!')
+    //cy.get('p').contains('Cards are hidden!')
+    cy.get('app-card').should('not.exist');
     cy.contains("Toggle Cards").click()
   }
 
