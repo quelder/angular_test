@@ -11,6 +11,8 @@ before(() => {
 it('Start page test', () => {
   cards.checkPageTitle('Hello Angular')
   cards.checkToggleCards()
+
+  cy.wait(1000).document().toMatchImageSnapshot()
 })
 
 it('First card', () => {
