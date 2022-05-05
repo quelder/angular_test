@@ -11,12 +11,13 @@ beforeEach(() => {
 
 
 
-it.skip('Start page test', () => {
+it ('Start page test', () => {
   cards.checkPageTitle('Hello Angular')
   cards.checkToggleCards()
 })
 
-it.skip('First card', () => {
+
+it ('First card', () => {
   cy.get('.card').eq(0)
     .trigger('focus','topLeft')
     .trigger('focus','topRight')
@@ -25,13 +26,13 @@ it.skip('First card', () => {
   cards.checkTitleButton('Test title', '0', 1)
 })
 
-it.skip('Second card', () => {
+it ('Second card', () => {
   cards.checkTitleAndTime('2 This is card 2', 'This is card number 2',  1)
   cards.checkColorButton('1')
   cards.checkTitleButton('Test title', '1', 2)
 })
 
-it.skip('Third card', () => {
+it ('Third card', () => {
   cards.checkTitleAndTime('3 Last card!', 'This is card number 3',  2)
   cards.checkColorButton(2)
   cards.checkTitleButton('Test title', 2, 3)
@@ -55,7 +56,7 @@ describe('Desktop 1920, 1080', {
     })
   })
 
-  it.skip('checks css sizing', () => {
+  it(' checks css styles and sizing', () => {
     let numberOfCards = 2;
     for (let i = 0; i <= numberOfCards; i += 1) {
       cy.get('.card').eq(`${i}`)
@@ -65,9 +66,31 @@ describe('Desktop 1920, 1080', {
 
     }
 
+    let numberOfButtons = 15;
+    for (let j = 0; j <= numberOfButtons; j += 1) {
+      cy.get('button').eq(`${j}`)
+        .should('have.css', 'margin', '0px')
+        .should('have.css', 'border', '2px outset rgb(118, 118, 118)')
+        .should('have.css', 'padding', '1px 6px')
+        .should('have.css', 'background-color', 'rgb(239, 239, 239)')
+        .should('have.css', 'height', '21px')
+    }
+
+    let numberOfInput = 2;
+    for (let k = 0; k <= numberOfInput; k += 1) {
+      cy.get('input').eq(`${k}`)
+        .should('have.css', 'margin', '0px')
+        .should('have.css', 'border', '2px inset rgb(118, 118, 118)')
+        .should('have.css', 'padding', '1px 2px')
+        .should('have.css', 'background-color', 'rgb(255, 255, 255)')
+        .should('have.css', 'height', '15px')
+        .should('have.css', 'width', '169px')
+    }
+
     // cy.get('[data-cy=headline]')
     //   .should('have.css', 'width').and('match', /^(569|571)px/)
   })
+
 })
 
 describe('Desktop 1366, 768', {
@@ -86,7 +109,7 @@ describe('Desktop 1366, 768', {
     })
   })
 
-  it.skip('checks css sizing', () => {
+  it (' checks css styles and sizing', () => {
     let numberOfCards = 2;
     for (let i = 0; i <= numberOfCards; i += 1) {
       cy.get('.card').eq(`${i}`)
@@ -94,6 +117,27 @@ describe('Desktop 1366, 768', {
         .should('have.css', 'border', '1px dashed rgb(204, 204, 204)')
         .should('have.css', 'padding', '8px 16px')
 
+    }
+
+    let numberOfButtons = 15;
+    for (let j = 0; j <= numberOfButtons; j += 1) {
+      cy.get('button').eq(`${j}`)
+        .should('have.css', 'margin', '0px')
+        .should('have.css', 'border', '2px outset rgb(118, 118, 118)')
+        .should('have.css', 'padding', '1px 6px')
+        .should('have.css', 'background-color', 'rgb(239, 239, 239)')
+        .should('have.css', 'height', '21px')
+    }
+
+    let numberOfInput = 2;
+    for (let k = 0; k <= numberOfInput; k += 1) {
+      cy.get('input').eq(`${k}`)
+        .should('have.css', 'margin', '0px')
+        .should('have.css', 'border', '2px inset rgb(118, 118, 118)')
+        .should('have.css', 'padding', '1px 2px')
+        .should('have.css', 'background-color', 'rgb(255, 255, 255)')
+        .should('have.css', 'height', '15px')
+        .should('have.css', 'width', '169px')
     }
   })
 })
@@ -114,7 +158,7 @@ describe('Ipad 2048, 1536', {
     })
   })
 
-  it.skip('checks css sizing', () => {
+  it (' checks css styles and sizing', () => {
     let numberOfCards = 2;
     for (let i = 0; i <= numberOfCards; i += 1) {
       cy.get('.card').eq(`${i}`)
@@ -122,6 +166,27 @@ describe('Ipad 2048, 1536', {
         .should('have.css', 'border', '1px dashed rgb(204, 204, 204)')
         .should('have.css', 'padding', '8px 16px')
 
+    }
+
+    let numberOfButtons = 15;
+    for (let j = 0; j <= numberOfButtons; j += 1) {
+      cy.get('button').eq(`${j}`)
+        .should('have.css', 'margin', '0px')
+        .should('have.css', 'border', '2px outset rgb(118, 118, 118)')
+        .should('have.css', 'padding', '1px 6px')
+        .should('have.css', 'background-color', 'rgb(239, 239, 239)')
+        .should('have.css', 'height', '21px')
+    }
+
+    let numberOfInput = 2;
+    for (let k = 0; k <= numberOfInput; k += 1) {
+      cy.get('input').eq(`${k}`)
+        .should('have.css', 'margin', '0px')
+        .should('have.css', 'border', '2px inset rgb(118, 118, 118)')
+        .should('have.css', 'padding', '1px 2px')
+        .should('have.css', 'background-color', 'rgb(255, 255, 255)')
+        .should('have.css', 'height', '15px')
+        .should('have.css', 'width', '169px')
     }
   })
 })
@@ -142,7 +207,7 @@ describe('Iphone 828, 1792', {
     })
   })
 
-  it.skip('checks css sizing', () => {
+  it (' checks css styles and sizing', () => {
     let numberOfCards = 2;
     for (let i = 0; i <= numberOfCards; i += 1) {
       cy.get('.card').eq(`${i}`)
@@ -150,6 +215,27 @@ describe('Iphone 828, 1792', {
         .should('have.css', 'border', '1px dashed rgb(204, 204, 204)')
         .should('have.css', 'padding', '8px 16px')
 
+    }
+
+    let numberOfButtons = 15;
+    for (let j = 0; j <= numberOfButtons; j += 1) {
+      cy.get('button').eq(`${j}`)
+        .should('have.css', 'margin', '0px')
+        .should('have.css', 'border', '2px outset rgb(118, 118, 118)')
+        .should('have.css', 'padding', '1px 6px')
+        .should('have.css', 'background-color', 'rgb(239, 239, 239)')
+        .should('have.css', 'height', '21px')
+    }
+
+    let numberOfInput = 2;
+    for (let k = 0; k <= numberOfInput; k += 1) {
+      cy.get('input').eq(`${k}`)
+        .should('have.css', 'margin', '0px')
+        .should('have.css', 'border', '2px inset rgb(118, 118, 118)')
+        .should('have.css', 'padding', '1px 2px')
+        .should('have.css', 'background-color', 'rgb(255, 255, 255)')
+        .should('have.css', 'height', '15px')
+        .should('have.css', 'width', '169px')
     }
   })
 })
