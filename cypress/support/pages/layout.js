@@ -9,8 +9,8 @@ export class Layout {
         cy.window().then(win => {
           const pageWidth = win.document.documentElement.scrollWidth
           const bounding = $target[0].getBoundingClientRect();
-          const rightwidht = pageWidth - bounding.right
-          expect(bounding.left).to.be.at.equal(rightwidht);
+          const rightWidth = pageWidth - bounding.right
+          expect(bounding.left).to.be.at.equal(rightWidth);
         })
       })
   }
